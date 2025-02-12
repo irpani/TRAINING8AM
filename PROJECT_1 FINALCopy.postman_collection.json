@@ -1,0 +1,1924 @@
+{
+	"info": {
+		"_postman_id": "942bf1a0-cf1a-42eb-8010-4f73cd67fd9a",
+		"name": "PROJECT_1 FINALCopy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6783638",
+		"_collection_link": "https://www.postman.com/planetary-capsule-991040/workspace/d58b4203-b44e-4238-b9f2-763f9f3c1e3c/collection/6783638-942bf1a0-cf1a-42eb-8010-4f73cd67fd9a?action=share&source=collection_link&creator=6783638"
+	},
+	"item": [
+		{
+			"name": "NEGATIVE TC Copy",
+			"item": [
+				{
+					"name": "UNSUPPORTED HTTP METHODS",
+					"item": [
+						{
+							"name": "Update User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Verify the response Code is 4XX ClientSide Error\", function () {\r",
+											"    pm.response.to.be.clientError;\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cAccessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{cAccessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"{{$randomFullName}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"status\": \"inactive\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://gorest.co.in/public/v2/users/7677132",
+									"protocol": "https",
+									"host": [
+										"gorest",
+										"co",
+										"in"
+									],
+									"path": [
+										"public",
+										"v2",
+										"users",
+										"7677132"
+									]
+								},
+								"description": "This Api Heps us to Update partial Fields in Payload  \nExpected Results  \n(1).Verify If the response code received from Server is 202 updated  \n(2).Verify If the Server response time < 5 Seconds  \n(3).Verify If the Server response body received from the SERVER  \n(4).Verify If the Server response received IN Json Format  \n(5).Verify If the Server response body has filelds updated"
+							},
+							"response": []
+						},
+						{
+							"name": "CreateUser",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Verify the response Code is 4XX ClientSide Error\", function () {\r",
+											"    pm.response.to.be.clientError;\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cAccessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{cAccessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"{{$randomFullName}}\",\r\n    \"gender\": \"male\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"status\": \"active\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://gorest.co.in/public/v2/users",
+									"protocol": "https",
+									"host": [
+										"gorest",
+										"co",
+										"in"
+									],
+									"path": [
+										"public",
+										"v2",
+										"users"
+									]
+								},
+								"description": "This Api Helpus to Create the User  \n(1).Verify If the response code received from Server is 201 Created  \n(2).Verify If the Server response time < 5 Seconds  \n(3).Verify If the Server response body received from the SERVER  \n(4).Verify If the Server response received IN Json Format  \n(5).Verify If the Server response body has filelds Such as id ,name, emailid ,gender ,status  \n(6).Verify If the Gender is Male (or) Female  \n(7).Verify If the status is Active (or) In Active"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Verify the response Code is 4XX ClientSide Error\", function () {\r",
+											"    pm.response.to.be.clientError;\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cAccessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{cAccessToken}}"
+									}
+								],
+								"url": {
+									"raw": "https://gorest.co.in/public/v2/users/7679378",
+									"protocol": "https",
+									"host": [
+										"gorest",
+										"co",
+										"in"
+									],
+									"path": [
+										"public",
+										"v2",
+										"users",
+										"7679378"
+									]
+								},
+								"description": "This Api Helps us to Delete the User\n\n(1).Verify If the response code received from Server is 204 Deleted  \n(2).Verify If the Server response time < 5 Seconds  \n(3).Verify If the Server response body received from the SERVER  \n(4).Verify If the Server response body userSuccessfullt DELETED"
+							},
+							"response": []
+						},
+						{
+							"name": "List Users",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.environment.get(\"variable_key\");"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Verify the response Code is 4XX ClientSide Error\", function () {\r",
+											"    pm.response.to.be.clientError;\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cAccessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{cAccessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://gorest.co.in/public/v2/users",
+									"protocol": "https",
+									"host": [
+										"gorest",
+										"co",
+										"in"
+									],
+									"path": [
+										"public",
+										"v2",
+										"users"
+									]
+								},
+								"description": "This Api Pickup the List Of Users in the DB  \nExp Result :  \n(1).Verify If the response code received from Server is 200 OK=PASSED  \n(2).Verify If the Server response time < 5 Seconds=PASSED  \n(3).Verify If the Server response body received from the SERVER=PASSED  \n(4).Verify If the Server response received IN Json Format=PASSED  \n\"(5).Verify If the Server response body has filelds such as id name gender email Status=PASSED\""
+							},
+							"response": []
+						}
+					],
+					"description": "**Unsupported http methods testing :**\n\nTest the given API with  \nan **Invalid http method** and the exp response code is **4Xx Client Side Error**\n\nLogic is VerySimple Guys :-\n\nChange the Http Method to Other Method Which is not there in the Requirement Document"
+				},
+				{
+					"name": "BROKEN ENDPOINT",
+					"item": [
+						{
+							"name": "Update User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Verify the response code is 4XX ClientSide Error or 5XX Server Side Error\", function ()\r",
+											" {  pm.response.to.be.error;\r",
+											"    });"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cAccessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{cAccessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Anuraag Varman\",\r\n    \"email\": \"varman_anuraag@predovic1.example\",\r\n    \"status\": \"inactive\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://gorest.co.in/private/v1/users/7677132",
+									"protocol": "https",
+									"host": [
+										"gorest",
+										"co",
+										"in"
+									],
+									"path": [
+										"private",
+										"v1",
+										"users",
+										"7677132"
+									]
+								},
+								"description": "This Api Heps us to Update partial Fields in Payload  \nExpected Results  \n(1).Verify If the response code received from Server is 202 updated  \n(2).Verify If the Server response time < 5 Seconds  \n(3).Verify If the Server response body received from the SERVER  \n(4).Verify If the Server response received IN Json Format  \n(5).Verify If the Server response body has filelds updated"
+							},
+							"response": []
+						},
+						{
+							"name": "CreateUser",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Verify the response code is 4XX ClientSide Error or 5XX Server Side Error\", function ()\r",
+											" {  pm.response.to.be.error;\r",
+											"    });"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cAccessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{cAccessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"shaik Khasimbi14\",\r\n    \"gender\": \"Female\",\r\n    \"email\": \"shaik.Khasimbi14@gmail.com\",\r\n    \"status\": \"active\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://gorest.co.in/private/v1/users",
+									"protocol": "https",
+									"host": [
+										"gorest",
+										"co",
+										"in"
+									],
+									"path": [
+										"private",
+										"v1",
+										"users"
+									]
+								},
+								"description": "This Api Helpus to Create the User  \n(1).Verify If the response code received from Server is 201 Created  \n(2).Verify If the Server response time < 5 Seconds  \n(3).Verify If the Server response body received from the SERVER  \n(4).Verify If the Server response received IN Json Format  \n(5).Verify If the Server response body has filelds Such as id ,name, emailid ,gender ,status  \n(6).Verify If the Gender is Male (or) Female  \n(7).Verify If the status is Active (or) In Active"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Verify the response code is 4XX ClientSide Error or 5XX Server Side Error\", function ()\r",
+											" {  pm.response.to.be.error;\r",
+											"    });"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cAccessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{cAccessToken}}"
+									}
+								],
+								"url": {
+									"raw": "https://gorest.co.in/private/v1/users/7679378",
+									"protocol": "https",
+									"host": [
+										"gorest",
+										"co",
+										"in"
+									],
+									"path": [
+										"private",
+										"v1",
+										"users",
+										"7679378"
+									]
+								},
+								"description": "This Api Helps us to Delete the User\n\n(1).Verify If the response code received from Server is 204 Deleted  \n(2).Verify If the Server response time < 5 Seconds  \n(3).Verify If the Server response body received from the SERVER  \n(4).Verify If the Server response body userSuccessfullt DELETED"
+							},
+							"response": []
+						},
+						{
+							"name": "List Users",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.environment.get(\"variable_key\");"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Verify the response code is 4XX ClientSide Error or 5XX Server Side Error\", function ()\r",
+											" {  pm.response.to.be.error;\r",
+											"    });\r",
+											"//Which Error Will Come  not Sure right ? \r",
+											"// Client Side Error  pm.response.to.be.clientError\r",
+											"// Server  Side Error  pm.response.to.be.ServerError\r",
+											"\r",
+											"\r",
+											"//So we will go with   pm.response.error\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cAccessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{cAccessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://gorest.co.in/private/v1/users",
+									"protocol": "https",
+									"host": [
+										"gorest",
+										"co",
+										"in"
+									],
+									"path": [
+										"private",
+										"v1",
+										"users"
+									]
+								},
+								"description": "This Api Pickup the List Of Users in the DB  \nExp Result :  \n(1).Verify If the response code received from Server is 200 OK=PASSED  \n(2).Verify If the Server response time < 5 Seconds=PASSED  \n(3).Verify If the Server response body received from the SERVER=PASSED  \n(4).Verify If the Server response received IN Json Format=PASSED  \n\"(5).Verify If the Server response body has filelds such as id name gender email Status=PASSED\""
+							},
+							"response": []
+						},
+						{
+							"name": "List Users Copy",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.environment.get(\"variable_key\");"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Verify the response code is 4XX ClientSide Error or 5XX Server Side Error\", function ()\r",
+											" {  pm.response.to.be.error;\r",
+											"    });\r",
+											"//Which Error Will Come  not Sure right ? \r",
+											"// Client Side Error  pm.response.to.be.clientError\r",
+											"// Server  Side Error  pm.response.to.be.ServerError\r",
+											"\r",
+											"\r",
+											"//So we will go with   pm.response.error\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cAccessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{cAccessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://gorest.co.in/public/v1/users",
+									"protocol": "https",
+									"host": [
+										"gorest",
+										"co",
+										"in"
+									],
+									"path": [
+										"public",
+										"v1",
+										"users"
+									]
+								},
+								"description": "This Api Pickup the List Of Users in the DB  \nExp Result :  \n(1).Verify If the response code received from Server is 200 OK=PASSED  \n(2).Verify If the Server response time < 5 Seconds=PASSED  \n(3).Verify If the Server response body received from the SERVER=PASSED  \n(4).Verify If the Server response received IN Json Format=PASSED  \n\"(5).Verify If the Server response body has filelds such as id name gender email Status=PASSED\""
+							},
+							"response": []
+						}
+					],
+					"description": "Testing the given Api with an **Invalid Endpints** and the expected response is 4XX"
+				},
+				{
+					"name": "PAYLOAD TAMPERING",
+					"item": [
+						{
+							"name": "Update User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Verify the response code is 4XX ClientSide Error or 5XX Server Side Error\", function ()\r",
+											" {  pm.response.to.be.error;\r",
+											"    });"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cAccessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{cAccessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Anuraag Varman\",\r\n    \"email\": \"varman_anuraag@predovic1.example\",\r\n    \"status\": \"inactive\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://gorest.co.in/public/v2/users/7677132",
+									"protocol": "https",
+									"host": [
+										"gorest",
+										"co",
+										"in"
+									],
+									"path": [
+										"public",
+										"v2",
+										"users",
+										"7677132"
+									]
+								},
+								"description": "This Api Heps us to Update partial Fields in Payload  \nExpected Results  \n(1).Verify If the response code received from Server is 202 updated  \n(2).Verify If the Server response time < 5 Seconds  \n(3).Verify If the Server response body received from the SERVER  \n(4).Verify If the Server response received IN Json Format  \n(5).Verify If the Server response body has filelds updated"
+							},
+							"response": []
+						},
+						{
+							"name": "Update User MissingPayload",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Verify the response code is 4XX ClientSide Error or 5XX Server Side Error\", function ()\r",
+											" {  pm.response.to.be.error;\r",
+											"    });"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cAccessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{cAccessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    //\"name\": \"Anuraag Varman\",\r\n    \"email\":\"{{$randomEmail}}\",\r\n    \"status\": \"inactive\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://gorest.co.in/public/v2/users/7677132",
+									"protocol": "https",
+									"host": [
+										"gorest",
+										"co",
+										"in"
+									],
+									"path": [
+										"public",
+										"v2",
+										"users",
+										"7677132"
+									]
+								},
+								"description": "This Api Heps us to Update partial Fields in Payload  \nExpected Results  \n(1).Verify If the response code received from Server is 202 updated  \n(2).Verify If the Server response time < 5 Seconds  \n(3).Verify If the Server response body received from the SERVER  \n(4).Verify If the Server response received IN Json Format  \n(5).Verify If the Server response body has filelds updated"
+							},
+							"response": []
+						},
+						{
+							"name": "CreateUser",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Verify the response code is 4XX or 5XX\", function ()\r",
+											" {\r",
+											"    pm.response.to.be.error;\r",
+											"    \r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cAccessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{cAccessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"irfan\",\r\n    \"gender\": \"Female\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"status\": \"active\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://gorest.co.in/public/v2/users",
+									"protocol": "https",
+									"host": [
+										"gorest",
+										"co",
+										"in"
+									],
+									"path": [
+										"public",
+										"v2",
+										"users"
+									]
+								},
+								"description": "This Api Helpus to Create the User  \n(1).Verify If the response code received from Server is 201 Created  \n(2).Verify If the Server response time < 5 Seconds  \n(3).Verify If the Server response body received from the SERVER  \n(4).Verify If the Server response received IN Json Format  \n(5).Verify If the Server response body has filelds Such as id ,name, emailid ,gender ,status  \n(6).Verify If the Gender is Male (or) Female  \n(7).Verify If the status is Active (or) In Active"
+							},
+							"response": []
+						},
+						{
+							"name": "CreateUser AdditionalPayloads",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Verify the response code is 4XX or 5XX\", function ()\r",
+											" {\r",
+											"    pm.response.to.be.error;\r",
+											"    \r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cAccessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{cAccessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"%$#3282feuhv3vvcx32322\",\r\n    \"gender\": \"Female\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"status\": \"active\",\r\n    \"mobilenumber\":\"9963650976\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://gorest.co.in/public/v2/users",
+									"protocol": "https",
+									"host": [
+										"gorest",
+										"co",
+										"in"
+									],
+									"path": [
+										"public",
+										"v2",
+										"users"
+									]
+								},
+								"description": "This Api Helpus to Create the User  \n(1).Verify If the response code received from Server is 201 Created  \n(2).Verify If the Server response time < 5 Seconds  \n(3).Verify If the Server response body received from the SERVER  \n(4).Verify If the Server response received IN Json Format  \n(5).Verify If the Server response body has filelds Such as id ,name, emailid ,gender ,status  \n(6).Verify If the Gender is Male (or) Female  \n(7).Verify If the status is Active (or) In Active"
+							},
+							"response": []
+						},
+						{
+							"name": "CreateUser NoPaylLoad",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Verify the response code is 4XX or 5XX\", function ()\r",
+											" {\r",
+											"    pm.response.to.be.error;\r",
+											"    \r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cAccessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{cAccessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"\",\r\n    \"gender\": \"\",\r\n    \"email\": \"\",\r\n    \"status\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://gorest.co.in/public/v2/users",
+									"protocol": "https",
+									"host": [
+										"gorest",
+										"co",
+										"in"
+									],
+									"path": [
+										"public",
+										"v2",
+										"users"
+									]
+								},
+								"description": "This Api Helpus to Create the User  \n(1).Verify If the response code received from Server is 201 Created  \n(2).Verify If the Server response time < 5 Seconds  \n(3).Verify If the Server response body received from the SERVER  \n(4).Verify If the Server response received IN Json Format  \n(5).Verify If the Server response body has filelds Such as id ,name, emailid ,gender ,status  \n(6).Verify If the Gender is Male (or) Female  \n(7).Verify If the status is Active (or) In Active"
+							},
+							"response": []
+						},
+						{
+							"name": "CreateUser InvalidValues",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Verify the response code is 4XX or 5XX\", function ()\r",
+											" {\r",
+											"    pm.response.to.be.error;\r",
+											"    \r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{cAccessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{cAccessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"\",\r\n    \"gender\": \"\",\r\n    \"email\": \"\",\r\n    \"status\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://gorest.co.in/public/v2/users",
+									"protocol": "https",
+									"host": [
+										"gorest",
+										"co",
+										"in"
+									],
+									"path": [
+										"public",
+										"v2",
+										"users"
+									]
+								},
+								"description": "This Api Helpus to Create the User  \n(1).Verify If the response code received from Server is 201 Created  \n(2).Verify If the Server response time < 5 Seconds  \n(3).Verify If the Server response body received from the SERVER  \n(4).Verify If the Server response received IN Json Format  \n(5).Verify If the Server response body has filelds Such as id ,name, emailid ,gender ,status  \n(6).Verify If the Gender is Male (or) Female  \n(7).Verify If the status is Active (or) In Active"
+							},
+							"response": []
+						}
+					],
+					"description": "Testing the given Api with **Invalid Payload** Such as\n\n- Invalid DataType\n    \n- Invalid DataLength\n    \n- Missing payload Fields\n    \n- Additional Payload Fields\n    \n- Empty Paylod Values\n    \n\nAnd the expected response is **4XX client Side Error**"
+				}
+			],
+			"description": "UnSupported HTTP Methods  \nBroken endpoint Testing  \nPayload Tampering Testing"
+		},
+		{
+			"name": "E2E Automation",
+			"item": [
+				{
+					"name": "CREATE A USER",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"  pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"    pm.response.to.have.status(\"Created\");\r",
+									"    });\r",
+									"    pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201,202]);\r",
+									"     });\r",
+									"    \r",
+									"\r",
+									"\r",
+									"pm.test(\"Response time is less than 375ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Yes Response Having Body\", function () {\r",
+									"    pm.response.to.have.body();\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\",\"application/json; charset=utf-8\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"name\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"gender\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"email\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"status\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Verify Gender is M or F\", function () {\r",
+									"    pm.expect(pm.response.json().gender).to.be.oneOf([\"male\",\"female\"]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Verify Status  is Active or InActive\", function () {\r",
+									"    pm.expect(pm.response.json().status).to.be.oneOf([\"active\",\"inactive\"]);\r",
+									"});\r",
+									"   \r",
+									"\r",
+									"   \r",
+									"    //Step (1).JSON Body Keep it in One Variale\r",
+									"         var jsonBody =pm.response.json();\r",
+									"   //Step (2).\r",
+									"   \r",
+									"   //Fron JSON Body Extract Below Fields id,name,email\r",
+									"         var extractID=jsonBody.id;\r",
+									"         var extractName=jsonBody.name;\r",
+									"         var extractEmail=jsonBody.email;\r",
+									"    //Step (3).\r",
+									"   //Convert Local Variables to Global Variable\r",
+									"pm.globals.set(\"globalID\", extractID);\r",
+									"pm.globals.set(\"globalName\", extractName);\r",
+									"pm.globals.set(\"globalEmail\", extractEmail);\r",
+									"\r",
+									"//With this we Completed API Chaining \r",
+									"\r",
+									"//Conditional Statements & Postman Workflows\r",
+									"    if(pm.response.code==201){\r",
+									"        console.log(pm.info.requestName+\"Passed\")\r",
+									"        //With this Step I told postman to go to Next Api\r",
+									"        pm.execution.setNextRequest(\"VERIFY IF USER IS CREATED\");\r",
+									"    }\r",
+									"    else{\r",
+									"      console.log(pm.info.requestName+\"Api Failed\")\r",
+									"    }\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{cAccessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{cAccessToken}}"
+							},
+							{
+								"key": "User-Agent",
+								"value": "{{$randomUserAgent}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"{{$randomFirstName}}\",\r\n    \"gender\": \"male\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"status\": \"inactive\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://gorest.co.in/public/v2/users",
+							"protocol": "https",
+							"host": [
+								"gorest",
+								"co",
+								"in"
+							],
+							"path": [
+								"public",
+								"v2",
+								"users"
+							]
+						},
+						"description": "This Api Helpus to Create the User  \n(1).Verify If the response code received from Server is 201 Created  \n(2).Verify If the Server response time < 5 Seconds  \n(3).Verify If the Server response body received from the SERVER  \n(4).Verify If the Server response received IN Json Format  \n(5).Verify If the Server response body has filelds Such as id ,name, emailid ,gender ,status  \n(6).Verify If the Gender is Male (or) Female  \n(7).Verify If the status is Active (or) In Active"
+					},
+					"response": []
+				},
+				{
+					"name": "VERIFY IF USER IS CREATED",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.get(\"variable_key\");"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 OK\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"     pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Verify Response time is < 5 seconds\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"PostMan Response have Body\", function () {\r",
+									"    pm.response.to.have.body();\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type Application/Json Is Present\", function (){\r",
+									"    pm.response.to.have.header(\"Content-Type\",\"application/json; charset=utf-8\")\r",
+									"      });\r",
+									"\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"id\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"name\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"email\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"gender\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"status\");\r",
+									"\r",
+									"});\r",
+									"\r",
+									"//POST () CREATE  A User ---- This Is Done Already                                              \r",
+									"// Now Check Get()  VERIFY IF USER IS CREATED  ?  In the Get () response  I have seen many Id's\r",
+									"\r",
+									"//It's like Index  , Which Function I will pick  for this ?\r",
+									"\r",
+									"pm.test(\"Verify If the User is Created\"+pm.globals.get(\"globalID\"), function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].id).to.eql(pm.globals.get(\"globalID\"));\r",
+									"});\r",
+									"    //here a Function Called get a global Variable in Snippet --- Use it with this u will get value\r",
+									"     //It will retirieve the value of Global Variable\r",
+									"       //U just replace below sTEP in place Of 100 \r",
+									"       pm.globals.get(\"variable_key\");  \r",
+									"       pm.globals.get(\"globalID\"); \r",
+									"\r",
+									"//Conditional Statements & Postman Workflows\r",
+									"    if(pm.response==200){\r",
+									"        console.log(pm.info.requestName+\"Api Passed\")\r",
+									"        //With this Step I told postman to go to Next Api\r",
+									"        pm.execution.setNextRequest(\"UPDATE THE CREATED USER\");\r",
+									"    }\r",
+									"    else{\r",
+									"      console.log(pm.info.requestName+\"Api Failed\")\r",
+									"    }\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{cAccessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{cAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://gorest.co.in/public/v2/users",
+							"protocol": "https",
+							"host": [
+								"gorest",
+								"co",
+								"in"
+							],
+							"path": [
+								"public",
+								"v2",
+								"users"
+							]
+						},
+						"description": "This Api Pickup the List Of Users in the DB  \nExp Result :  \n(1).Verify If the response code received from Server is 200 OK=PASSED  \n(2).Verify If the Server response time < 5 Seconds=PASSED  \n(3).Verify If the Server response body received from the SERVER=PASSED  \n(4).Verify If the Server response received IN Json Format=PASSED  \n\"(5).Verify If the Server response body has filelds such as id name gender email Status=PASSED\""
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE THE CREATED USER",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 OK\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"     pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Verify Response time is < 5 seconds\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"PostMan Response have Body\", function () {\r",
+									"    pm.response.to.have.body();\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type Application/Json Is Present\", function (){\r",
+									"    pm.response.to.have.header(\"Content-Type\",\"application/json; charset=utf-8\")\r",
+									"      });\r",
+									"\r",
+									"    pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"name\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"gender\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"email\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"status\");\r",
+									"    });\r",
+									"\r",
+									"pm.test(\"Verify Gender is M or F\", function () {\r",
+									"    pm.expect(pm.response.json().gender).to.be.oneOf([\"male\",\"female\"]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Verify Status  is Active or InActive\", function () {\r",
+									"    pm.expect(pm.response.json().status).to.be.oneOf([\"active\",\"inactive\"]);\r",
+									"});\r",
+									"\r",
+									"pm.test.skip(\"Your test name\", function () {\r",
+									"\tvar jsonData = pm.response.json();\r",
+									"\tpm.expect(jsonData.value).to.eql(\"Anshula Rana\");\r",
+									"});\r",
+									"\r",
+									"console.log(\"Request Method For this Api is \"+pm.request.method)\r",
+									"\r",
+									"var jsonBody =pm.response.json();\r",
+									"   //Step (2).\r",
+									"   \r",
+									"   //Fron JSON Body Extract Below Field name\r",
+									"  var extractUpdatedName=jsonBody.name;\r",
+									"      \r",
+									"    //Step (3).\r",
+									"   //Convert Local Variables to Global Variable\r",
+									"     pm.globals.set(\"globalUpdatedName\", extractUpdatedName);\r",
+									"\r",
+									"\r",
+									"//Conditional Statements & Postman Workflows\r",
+									"    if(pm.response.code==200){\r",
+									"        console.log(pm.info.requestName+\"Api Passed\")\r",
+									"        //With this Step I told postman to go to Next Api\r",
+									"        pm.execution.setNextRequest(\"VERIFY CREATED USER IS UPDATED\");\r",
+									"    }\r",
+									"    else{\r",
+									"      console.log(pm.info.requestName+\"Api Failed\")\r",
+									"    }\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{cAccessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{cAccessToken}}"
+							},
+							{
+								"key": "User-Agent",
+								"value": "{{$randomUserAgent}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"{{$randomNamePrefix}} {{globalName}}\",\r\n    \"email\": \"{{globalEmail}}\",\r\n    \"status\": \"active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://gorest.co.in/public/v2/users/{{globalID}}",
+							"protocol": "https",
+							"host": [
+								"gorest",
+								"co",
+								"in"
+							],
+							"path": [
+								"public",
+								"v2",
+								"users",
+								"{{globalID}}"
+							]
+						},
+						"description": "This Api Heps us to Update partial Fields in Payload  \nExpected Results  \n(1).Verify If the response code received from Server is 202 updated  \n(2).Verify If the Server response time < 5 Seconds  \n(3).Verify If the Server response body received from the SERVER  \n(4).Verify If the Server response received IN Json Format  \n(5).Verify If the Server response body has filelds updated"
+					},
+					"response": []
+				},
+				{
+					"name": "VERIFY CREATED USER IS UPDATED",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.get(\"variable_key\");"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 OK\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"     pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Verify Response time is < 5 seconds\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"PostMan Response have Body\", function () {\r",
+									"    pm.response.to.have.body();\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type Application/Json Is Present\", function (){\r",
+									"    pm.response.to.have.header(\"Content-Type\",\"application/json; charset=utf-8\")\r",
+									"      });\r",
+									"\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"id\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"name\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"email\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"gender\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"status\");\r",
+									"\r",
+									"});\r",
+									"\r",
+									"   \r",
+									"\r",
+									"pm.test(\"Verify updated name is \"+pm.globals.get(\"globalUpdatedName\"), function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].name).to.eql(pm.globals.get(\"globalUpdatedName\"));\r",
+									"});\r",
+									"\r",
+									"\r",
+									"//Conditional Statements & Postman Workflows\r",
+									"    if(pm.response.code==200){\r",
+									"        console.log(pm.info.requestName+\"Api Passed\")\r",
+									"        //With this Step I told postman to go to Next Api\r",
+									"        pm.execution.setNextRequest(\"DELETE THE CREATED USER\");\r",
+									"    }\r",
+									"    else{\r",
+									"      console.log(pm.info.requestName+\"Api Failed\")\r",
+									"    }\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{cAccessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{cAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://gorest.co.in/public/v2/users",
+							"protocol": "https",
+							"host": [
+								"gorest",
+								"co",
+								"in"
+							],
+							"path": [
+								"public",
+								"v2",
+								"users"
+							]
+						},
+						"description": "This Api Pickup the List Of Users in the DB  \nExp Result :  \n(1).Verify If the response code received from Server is 200 OK=PASSED  \n(2).Verify If the Server response time < 5 Seconds=PASSED  \n(3).Verify If the Server response body received from the SERVER=PASSED  \n(4).Verify If the Server response received IN Json Format=PASSED  \n\"(5).Verify If the Server response body has filelds such as id name gender email Status=PASSED\""
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE THE CREATED USER",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 5 seconds\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response Not having Body\", function () {\r",
+									"\tpm.response.to.not.have.body();\r",
+									"});\r",
+									"\r",
+									"\r",
+									"//Conditional Statements & Postman Workflows\r",
+									"    if(pm.response.code==204){\r",
+									"        console.log(pm.info.requestName+\"Api Passed\")\r",
+									"        //With this Step I told postman to go to Next Api\r",
+									"        pm.execution.setNextRequest(\"VERIFY IF CREATED USED IS DELETED\");\r",
+									"    }\r",
+									"    else{\r",
+									"      console.log(pm.info.requestName+\"Api Failed\")\r",
+									"    }\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{cAccessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{cAccessToken}}"
+							},
+							{
+								"key": "User-Agent",
+								"value": "{{$randomUserAgent}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://gorest.co.in/public/v2/users/{{globalID}}",
+							"protocol": "https",
+							"host": [
+								"gorest",
+								"co",
+								"in"
+							],
+							"path": [
+								"public",
+								"v2",
+								"users",
+								"{{globalID}}"
+							]
+						},
+						"description": "This Api Helps us to Delete the User\n\n(1).Verify If the response code received from Server is 204 Deleted  \n(2).Verify If the Server response time < 5 Seconds  \n(3).Verify If the Server response body received from the SERVER  \n(4).Verify If the Server response body userSuccessfullt DELETED"
+					},
+					"response": []
+				},
+				{
+					"name": "VERIFY IF CREATED USED IS DELETED",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.get(\"variable_key\");"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 OK\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"     pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Verify Response time is < 5 seconds\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"PostMan Response have Body\", function () {\r",
+									"    pm.response.to.have.body();\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type Application/Json Is Present\", function (){\r",
+									"    pm.response.to.have.header(\"Content-Type\",\"application/json; charset=utf-8\")\r",
+									"      });\r",
+									"\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"id\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"name\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"email\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"gender\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"status\");\r",
+									"\r",
+									"});\r",
+									"//Verify If the User is DELETED\r",
+									"\r",
+									"pm.test(\"Verify Cferatd user deleted id\" +pm.globals.get(\"globalID\"), function () {\r",
+									"\r",
+									"    pm.expect(pm.response.text()).to.not.include(pm.globals.get(\"globalID\"));\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"//Conditional Statements & Postman Workflows\r",
+									"    if(pm.response.code==200){\r",
+									"        console.log(pm.info.requestName+\"Api Passed\")\r",
+									"        //With this Step I told postman to go to Next Api\r",
+									"        pm.execution.setNextRequest(\"\");\r",
+									"    }\r",
+									"    else{\r",
+									"      console.log(\"\")\r",
+									"    }\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{cAccessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{cAccessToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://gorest.co.in/public/v2/users",
+							"protocol": "https",
+							"host": [
+								"gorest",
+								"co",
+								"in"
+							],
+							"path": [
+								"public",
+								"v2",
+								"users"
+							]
+						},
+						"description": "This Api Pickup the List Of Users in the DB  \nExp Result :  \n(1).Verify If the response code received from Server is 200 OK=PASSED  \n(2).Verify If the Server response time < 5 Seconds=PASSED  \n(3).Verify If the Server response body received from the SERVER=PASSED  \n(4).Verify If the Server response received IN Json Format=PASSED  \n\"(5).Verify If the Server response body has filelds such as id name gender email Status=PASSED\""
+					},
+					"response": []
+				}
+			],
+			"description": "CREATE A USER (POST)  \nVERIFY IF USER IS CREATED (GET )  \nUPDATE THIS CREATED USER (PATCH)  \nVERIFY IF CREATED USER IS UPDATED (GET )  \nDELETE CREATED USERR (DELETE)  \nVERIFY USER IS DELETED (GET )"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "variable_key",
+			"value": ""
+		},
+		{
+			"key": "cAccessToken",
+			"value": ""
+		},
+		{
+			"key": "gAccessToken",
+			"value": ""
+		}
+	]
+}

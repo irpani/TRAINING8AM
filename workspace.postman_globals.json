@@ -1,0 +1,57 @@
+{
+	"id": "6e7269f8-b8a0-4f96-8458-75c657ea577b",
+	"values": [
+		{
+			"key": "cAccessToken",
+			"value": "0686099c99bce153de66492362d6d7e50d40950999fe30828bd49191fa156e3f",
+			"type": "default",
+			"enabled": false
+		},
+		{
+			"key": "gAccessToken",
+			"value": "0686099c99bce153de66492362d6d7e50d40950999fe30828bd49191fa156e3f",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "envProtocol",
+			"value": "",
+			"type": "any",
+			"enabled": false
+		},
+		{
+			"key": "envURL",
+			"value": "",
+			"type": "any",
+			"enabled": false
+		},
+		{
+			"key": "globalID",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "globalName",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "globalEmail",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "globalUpdatedName",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		}
+	],
+	"name": "Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2025-02-12T11:43:25.887Z",
+	"_postman_exported_using": "Postman/11.32.1"
+}
